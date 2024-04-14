@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="Sheryar Dev">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Me?</title>
+    <style>
+        #container {
+            text-align: center;
+            margin-top: 100px;
+        }
+        #text {
+            font-size: 24px;
+        }
+        #yesButton, #no {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        #no {
+            font-size: 36px;
+            cursor: pointer;
+            margin-left: 20px; /* Adjust the margin to create space between buttons */
+        }
+        #no:hover {
+            animation: move 1s infinite alternate;
+        }
+        @keyframes move {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50px); }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <p id="text">❤️Do you love me?❤️</p> <!-- Moved love prompt above the buttons -->
+        <button id="yesButton" onclick="showLoveMessage()">Yes</button>
+        <p id="no" onmouseover="moveButton()">No</p> <!-- Changed to <p> to maintain styling -->
+    </div>
+
+    <script>
+        function showLoveMessage() {
+            alert("❤️I love you too, my janny man!❤️");
+        }
+
+        function moveButton() {
+            const button = document.getElementById('no');
+            const container = document.getElementById('container');
+            const containerRect = container.getBoundingClientRect();
+            const xPos = Math.random() * (containerRect.width - button.offsetWidth);
+            const yPos = Math.random() * (containerRect.height - button.offsetHeight);
+            button.style.position = 'absolute';
+            button.style.left = xPos + 'px';
+            button.style.top = yPos + 'px';
+        }
+    </script>
+</body>
+</html>  
